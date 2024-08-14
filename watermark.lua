@@ -90,11 +90,9 @@ game:GetService("RunService").RenderStepped:Connect(function()
     Watermark.watermarkText1.Text = ' | ' .. game.Players.LocalPlayer.Name .. ' | ' .. game.Name .. ' | ' .. math.round(game.Players.LocalPlayer:GetNetworkPing() * 2000) .. 'ms'
     Watermark.watermarkText1.Position = UDim2.new(0, Watermark.watermarkText2.TextBounds.X - 2, 0, 0)
     Watermark.watermarkFrame.Size = UDim2.new(0, (Watermark.watermarkText2.TextBounds.X + (Watermark.watermarkText1.TextBounds.X)) + 4, 0, 25)
-end)
 
-task.spawn(function()
-    while true do
-        local gradient = Watermark.gradient
+    function()
+        local gradient = Watermark.gradient2
         local ts = game:GetService("TweenService")
         local ti = TweenInfo.new(2.5, Enum.EasingStyle.Linear, Enum.EasingDirection.In)
         local offset1 = {Offset = Vector2.new(-1, 0)}
@@ -115,11 +113,9 @@ task.spawn(function()
             if rot == 0 then rot = 180 elseif rot == 180 then rot = 0 end
         end
     end
-end)
 
-task.spawn(function()
-    while true do
-        local gradient = Watermark.gradient2
+    function()
+        local gradient = Watermark.gradient
         local ts = game:GetService("TweenService")
         local ti = TweenInfo.new(2.5, Enum.EasingStyle.Linear, Enum.EasingDirection.In)
         local offset1 = {Offset = Vector2.new(-1, 0)}
